@@ -8,17 +8,18 @@
 
 WebSocket API for OBS Studio.
 
-[![CI Multiplatform Build](https://github.com/obsproject/obs-websocket/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/obsproject/obs-websocket/actions/workflows/main.yml)
 [![Discord](https://img.shields.io/discord/715691013825364120.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/WBaSQ3A)
 [![Financial Contributors on Open Collective](https://opencollective.com/obs-websocket-dev/all/badge.svg?label=financial+contributors)](https://opencollective.com/obs-websocket-dev)
 
 ## Downloads
 
-Binaries for Windows, MacOS, and Linux are available in the [Releases](https://github.com/obsproject/obs-websocket/releases) section.
+obs-websocket is now included by default with OBS Studio 28.0.0 and above. As such, **there should be no need to download obs-websocket if you have OBS Studio > 28.0.0.**
+
+Binaries **for OBS Studio < 28.0.0** on Windows, MacOS, and Linux are available in the [Releases](https://github.com/obsproject/obs-websocket/releases) section.
 
 ## Using obs-websocket
 
-It is **highly recommended** to protect obs-websocket with a password against unauthorized control. To do this, open the "Websocket server settings" dialog under OBS' "Tools" menu. In the settings dialogs, you can enable or disable authentication and set a password for it.
+It is **highly recommended** to keep obs-websocket protected with a password against unauthorized control. obs-websocket generates a password for you automatically when you load it for the first time. To change this, open the "obs-websocket Settings" dialog under OBS' "Tools" menu. In the settings dialog, you can enable or disable authentication and set a password for it.
 
 (Psst. You can use `--websocket_port`(value), `--websocket_password`(value), `--websocket_debug`(flag) and `--websocket_ipv4_only`(flag) on the command line to override the configured values.)
 
@@ -30,7 +31,8 @@ It is **highly recommended** to protect obs-websocket with a password against un
 
 ### Client software
 
-- (No known clients supporting 5.0.0 at the moment. Ping us in the Discord if you have one!)
+- [Touch Portal](https://www.touch-portal.com/)
+- [Twitchat](https://twitchat.fr/)
 
 ### Client libraries (for developers)
 
@@ -40,6 +42,9 @@ Here's a list of available language APIs for obs-websocket:
 - Rust: [obws](https://github.com/dnaka91/obws/tree/v5-api) by dnaka91
 - Godot 3.4.x: [obs-websocket-gd](https://github.com/you-win/obs-websocket-gd) by you-win
 - Javascript (Node and web): [obs-websocket-js](https://github.com/obs-websocket-community-projects/obs-websocket-js) by OBS Websocket Community
+  - C (uses obs-websocket-js): [v8-libwebsocket-obs-websocket](https://github.com/dgatwood/v8-libwebsocket-obs-websocket)
+- Go: [goobs](https://github.com/andreykaipov/goobs) by andreykaipov
+- Dart (Dart/Flutter - Android, ios, Linux, macos, web, Windows): [obs_websocket](https://github.com/faithoflifedev/obs_websocket)
 
 The 5.x server is a typical WebSocket server running by default on port 4455 (the port number can be changed in the Settings dialog under `Tools`).
 The protocol we use is documented in [PROTOCOL.md](docs/generated/protocol.md).
